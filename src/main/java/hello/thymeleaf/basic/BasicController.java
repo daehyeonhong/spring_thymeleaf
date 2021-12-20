@@ -16,22 +16,22 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Controller
-@RequestMapping("/basic")
+@RequestMapping(value = "/basic")
 public class BasicController {
 
-    @GetMapping("text-basic")
+    @GetMapping(value = "text-basic")
     public String textBasic(Model model) {
         model.addAttribute("data", "Hello, World!");
         return "basic/text-basic";
     }
 
-    @GetMapping("text-unescaped")
+    @GetMapping(value = "text-unescaped")
     public String textUnescaped(Model model) {
         model.addAttribute("data", "Hello, <b>World!</b>");
         return "basic/text-unescaped";
     }
 
-    @GetMapping("/variable")
+    @GetMapping(value = "/variable")
     public String variable(Model model) {
         User userA = new User("userA", 10);
         User userB = new User("userB", 20);
@@ -51,29 +51,36 @@ public class BasicController {
         return "basic/variable";
     }
 
-    @GetMapping("/basic-objects")
+    @GetMapping(value = "/basic-objects")
     public String basicObjects(HttpSession session) {
         session.setAttribute("sessionData", "Hello, World!");
         return "basic/basic-objects";
     }
 
-    @GetMapping("/date")
+    @GetMapping(value = "/date")
     public String date(Model model) {
         model.addAttribute("localDateTime", LocalDateTime.now());
         return "basic/date";
     }
 
-    @GetMapping("link")
+    @GetMapping(value = "link")
     public String link(Model model) {
         model.addAttribute("param1", "data1");
         model.addAttribute("param2", "data2");
         return "basic/link";
     }
 
-    @GetMapping("/literal")
+    @GetMapping(value = "/literal")
     public String literal(Model model) {
         model.addAttribute("data", "Spring!");
         return "basic/literal";
+    }
+
+    @GetMapping(value = "operation")
+    public String operation(Model model) {
+        model.addAttribute("null", null);
+        model.addAttribute("data", "Spring!");
+        return "/basic/operation";
     }
 
     @Component("helloBean")

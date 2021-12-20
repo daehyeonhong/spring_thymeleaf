@@ -80,7 +80,26 @@ public class BasicController {
     public String operation(Model model) {
         model.addAttribute("null", null);
         model.addAttribute("data", "Spring!");
-        return "/basic/operation";
+        return "basic/operation";
+    }
+
+    @GetMapping(value = "attribute")
+    public String attribute() {
+        return "basic/attribute";
+    }
+
+    @GetMapping(value = "each")
+    public String each(Model model) {
+        this.addUser(model);
+        return "basic/each";
+    }
+
+    private void addUser(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("userA", 10));
+        list.add(new User("userB", 20));
+        list.add(new User("userC", 30));
+        model.addAttribute("users", list);
     }
 
     @Component("helloBean")

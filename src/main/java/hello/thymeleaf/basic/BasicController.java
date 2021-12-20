@@ -93,10 +93,23 @@ public class BasicController {
         this.addUser(model);
         return "/basic/each";
     }
+
     @GetMapping(value = "condition")
     public String condition(Model model) {
         this.addUser(model);
         return "/basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "/basic/comments";
+    }
+
+    @GetMapping("/block")
+    public String block(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "/basic/block";
     }
 
     private void addUser(Model model) {

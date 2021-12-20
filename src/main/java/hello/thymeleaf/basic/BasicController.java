@@ -22,13 +22,13 @@ public class BasicController {
     @GetMapping(value = "text-basic")
     public String textBasic(Model model) {
         model.addAttribute("data", "Hello, World!");
-        return "basic/text-basic";
+        return "/basic/text-basic";
     }
 
     @GetMapping(value = "text-unescaped")
     public String textUnescaped(Model model) {
         model.addAttribute("data", "Hello, <b>World!</b>");
-        return "basic/text-unescaped";
+        return "/basic/text-unescaped";
     }
 
     @GetMapping(value = "/variable")
@@ -48,50 +48,55 @@ public class BasicController {
         model.addAttribute("userList", userList);
         model.addAttribute("userMap", userMap);
 
-        return "basic/variable";
+        return "/basic/variable";
     }
 
     @GetMapping(value = "/basic-objects")
     public String basicObjects(HttpSession session) {
         session.setAttribute("sessionData", "Hello, World!");
-        return "basic/basic-objects";
+        return "/basic/basic-objects";
     }
 
     @GetMapping(value = "/date")
     public String date(Model model) {
         model.addAttribute("localDateTime", LocalDateTime.now());
-        return "basic/date";
+        return "/basic/date";
     }
 
     @GetMapping(value = "link")
     public String link(Model model) {
         model.addAttribute("param1", "data1");
         model.addAttribute("param2", "data2");
-        return "basic/link";
+        return "/basic/link";
     }
 
     @GetMapping(value = "/literal")
     public String literal(Model model) {
         model.addAttribute("data", "Spring!");
-        return "basic/literal";
+        return "/basic/literal";
     }
 
     @GetMapping(value = "operation")
     public String operation(Model model) {
         model.addAttribute("null", null);
         model.addAttribute("data", "Spring!");
-        return "basic/operation";
+        return "/basic/operation";
     }
 
     @GetMapping(value = "attribute")
     public String attribute() {
-        return "basic/attribute";
+        return "/basic/attribute";
     }
 
     @GetMapping(value = "each")
     public String each(Model model) {
         this.addUser(model);
-        return "basic/each";
+        return "/basic/each";
+    }
+    @GetMapping(value = "condition")
+    public String condition(Model model) {
+        this.addUser(model);
+        return "/basic/condition";
     }
 
     private void addUser(Model model) {

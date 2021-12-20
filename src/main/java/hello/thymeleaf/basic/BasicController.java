@@ -108,7 +108,7 @@ public class BasicController {
 
     @GetMapping("/block")
     public String block(Model model) {
-        model.addAttribute("data", "Spring!");
+        this.addUser(model);
         return "/basic/block";
     }
 

@@ -109,3 +109,11 @@ SSR이란?
 ### 3.3 `Utility Object`
 
 `Thymeleaf`에서는 다양한 `Utility Object`를 제공하는데, 그 중 `#temporals`를 사용하여 `Date`를 다양한 형식으로 변환할 수 있다.
+
+### 3.4. `URL Expression`: `@{...}`
+
+|                             `URL Expression`                              |                   `Description`                   |
+|:-------------------------------------------------------------------------:|:-------------------------------------------------:|
+|                                `@{/path}`                                 |                  `Context Path`                   |
+|              `@{/path(param1=${param1}, param2=${param2})}`               |         `Context Path`, `QueryParameter`          |
+| `@{/path/{param1}(param1=${param1}, param2=${param2}, param3=${param3})}` | `Context Path`, `Path Variable`, `QueryParameter` |

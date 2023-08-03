@@ -149,3 +149,26 @@ SSR이란?
 |   `엘비스 연산자`    |                `?:`                |
 | `No-Operation` |                `_`                 |
 |    `연결 연산자`    |                `+`                 |
+
+## 4. `Thymeleaf`의 `Attribute`
+
+### 4.1 `th:`
+
+`Thymeleaf`의 `Attribute`는 `th:`를 사용하여 정의한다.<br/>
+`th:` 태그에 할당된 값이 `HTML` 기본 태그를 덮어쓰게 된다.
+
+### 4.2 `th:attrappend`, `th:attrprepend`, `th:classappend`
+
+`th:attrappend`, `th:attrprepend`, `th:classappend`는 `HTML`의 `Attribute`를 추가할 때 사용한다.<br/>
+`th:attrappend`와 `th:attrprepend`는 할당된 값을 그대로 추가하는 반면, `th:classappend`는 `HTML`의 `Attribute`에 할당된 값과 `Thymeleaf`
+의 `Attribute`에 할당된 값을 공백을 두고 추가한다.
+
+### 4.3 `th:checked`
+
+`HTML`에서는 `check` 태그의 값과 상관 없이 태그 자체가 존재하면 `checked`가 된다.<br/>
+하지만 `Thymeleaf`에서는 `check` 태그의 값에 따라 `checked`가 되도록 할 수 있다.
+
+```html
+<!-- HTML -->
+<input type="checkbox" th:checked="${user.enabled}"/>
+```

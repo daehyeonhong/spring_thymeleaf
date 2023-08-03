@@ -1,7 +1,8 @@
 package hello.thymeleaf.basic;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +41,7 @@ public class BasicController {
         final Map<String, User> map = list.stream().collect(Collectors.toMap(User::getUsername, user -> user));
 
         logger.info("userA={}", userA);
+        logger.info("userB={}", userB.getAge());
         logger.info("list={}", list);
         logger.info("map={}", map);
 
@@ -50,9 +52,22 @@ public class BasicController {
         return "basic/variable";
     }
 
+    @GetMapping(value = "/basic-objects")
+    public String basicObjects(final HttpSession session    ) {
+        session.setAttribute("sessionData", "Hello, Session!");
+        return "basic/basic-objects";
+    }
+
+    @Component(value = "helloBean")
+    static class HelloBean {
+        public String hello(final String data) {
+            return "Hello, " + data + '!';
+        }
+    }
+
     static class User {
-        private String username;
-        private int age;
+        private final String username;
+        private final int age;
 
         public User(final String username, final int age) {
             this.username = username;
@@ -63,16 +78,8 @@ public class BasicController {
             return username;
         }
 
-        public void setUsername(final String username) {
-            this.username = username;
-        }
-
         public int getAge() {
             return age;
-        }
-
-        public void setAge(final int age) {
-            this.age = age;
         }
 
         @Override

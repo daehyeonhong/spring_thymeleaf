@@ -69,3 +69,39 @@ SSR이란?
 실제 서비스에서는 `HTML`의 `Text`를 `HTML`로 인식하여 렌더링하는 것은 보안상 위험하다.<br/>
 기본적으로는 `th:text`를 사용하여 `HTML`의 `Text`를 `HTML Entity`로 인식하여 렌더링하는 것이 좋고,<br/> `HTML`의 `Text`를 `HTML`로 인식하여 렌더링해야하는
 경우에만 `th:utext`를 사용하는 것이 좋다.
+
+## 3. `Expression`
+
+### 3.1. `Variable Expression`: `${...}`
+
+`Thymeleaf`에서는 `Expression`을 사용하여 `HTML`을 렌더링 할 수 있다.<br/>
+`Expression`은 `Thymeleaf`에서 제공하는 `Object`를 사용하여 `HTML`을 렌더링 할 수 있도록 해준다.<br/>
+`Expression`은 다음과 같이 사용할 수 있다.
+
+```html
+<!-- HTML -->
+<span th:text="${name}"></span>
+```
+
+`SpEL`과 함께 사용하여 `Map`, `List`와 같은 `Collection`을 사용할 수 있다.
+
+```html
+<!-- HTML -->
+<span th:text="${user['username']}"></span>
+<span th:text="${user.username}"></span>
+<span th:text="${users[0]}"></span>
+<span th:text="${users[0].username}"></span>
+```
+
+### 3.2. `기본 객체`
+
+`Thymeleaf`에서는 기본적으로 `HttpServletRequest`, `HttpServletResponse`, `HttpSession`, `ServletContext`와 같은 `Object`를 제공
+했었지만, `3.1`버전부터 사용할 수 없게 되었다.<br/>
+
+이외에도 여러가지 편의 객체를 제공한다.
+
+|   `Object`   |                          `Description`                          |
+|:------------:|:---------------------------------------------------------------:|
+|   `param`    | `HttpServletRequest`의 `getParameter()`를 사용하여 `Parameter`를 가져온다. |
+|  `session`   |              `HttpSession`을 사용하여 `Session`을 가져온다.               |
+| `@beansName` |                    `Spring`에서 `Bean`을 가져온다.                     |

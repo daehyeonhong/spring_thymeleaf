@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -53,9 +54,15 @@ public class BasicController {
     }
 
     @GetMapping(value = "/basic-objects")
-    public String basicObjects(final HttpSession session    ) {
+    public String basicObjects(final HttpSession session) {
         session.setAttribute("sessionData", "Hello, Session!");
         return "basic/basic-objects";
+    }
+
+    @GetMapping(value = "/date")
+    public String date(final Model model) {
+        model.addAttribute("localDateTime", LocalDateTime.now());
+        return "basic/date";
     }
 
     @Component(value = "helloBean")

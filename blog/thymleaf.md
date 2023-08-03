@@ -96,8 +96,8 @@ SSR이란?
 ### 3.2. `기본 객체`
 
 `Thymeleaf`에서는 기본적으로 `HttpServletRequest`, `HttpServletResponse`, `HttpSession`, `ServletContext`와 같은 `Object`를 제공
-했었지만, `3.1`버전부터 사용할 수 없게 되었다.<br/>
-
+했었지만, `3.1`버전부터 사용할 수 없게 되었다.
+[참조링크](https://www.thymeleaf.org/doc/articles/thymeleaf31whatsnew.html)<br/>
 이외에도 여러가지 편의 객체를 제공한다.
 
 |   `Object`   |                          `Description`                          |
@@ -105,3 +105,7 @@ SSR이란?
 |   `param`    | `HttpServletRequest`의 `getParameter()`를 사용하여 `Parameter`를 가져온다. |
 |  `session`   |              `HttpSession`을 사용하여 `Session`을 가져온다.               |
 | `@beansName` |                    `Spring`에서 `Bean`을 가져온다.                     |
+
+### 3.3 `Utility Object`
+
+`Thymeleaf`에서는 다양한 `Utility Object`를 제공하는데, 그 중 `#temporals`를 사용하여 `Date`를 다양한 형식으로 변환할 수 있다.

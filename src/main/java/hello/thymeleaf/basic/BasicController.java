@@ -72,6 +72,12 @@ public class BasicController {
         return "basic/link";
     }
 
+    @GetMapping(value = "/literal")
+    public String literal(final Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/literal";
+    }
+
     @Component(value = "helloBean")
     static class HelloBean {
         public String hello(final String data) {

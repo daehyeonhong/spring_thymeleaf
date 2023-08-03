@@ -117,3 +117,22 @@ SSR이란?
 |                                `@{/path}`                                 |                  `Context Path`                   |
 |              `@{/path(param1=${param1}, param2=${param2})}`               |         `Context Path`, `QueryParameter`          |
 | `@{/path/{param1}(param1=${param1}, param2=${param2}, param3=${param3})}` | `Context Path`, `Path Variable`, `QueryParameter` |
+
+### 3.5 `Literal`: `''`
+
+`Thymeleaf`에서 `Literal`은 항상 `''`을 사용하여 감싸줘야 한다.
+
+```html
+<!-- HTML -->
+<span th:text="${'Hello'}"></span>
+```
+
+하지만 예외적으로 공백 없이 쭉 이어진다면, 의미있는 하나의 토큰으로 인지하여 `''`를 사용하지 않아도 된다.<br/>
+예시: `A-Z`, `a-z`, `0-9`, `_`, `[]` 등
+
+**오류**
+    
+```html
+<!-- HTML -->
+<span th:text="${Hello, World!}"></span>
+```

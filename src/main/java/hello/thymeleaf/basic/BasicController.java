@@ -96,6 +96,12 @@ public class BasicController {
         return "basic/each";
     }
 
+    @GetMapping(value = "/condition")
+    public String condition(final Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
     private static void addUsers(final Model model) {
         final List<User> list = Arrays.asList(
                 new User("userA", 10),

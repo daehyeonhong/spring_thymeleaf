@@ -149,7 +149,6 @@ SSR이란?
 |   `엘비스 연산자`    |                `?:`                |
 | `No-Operation` |                `_`                 |
 |    `연결 연산자`    |                `+`                 |
-<<<<<<< HEAD
 
 ## 4. `Thymeleaf`의 `Attribute`
 
@@ -201,5 +200,3 @@ SSR이란?
 반복시 오른쪽 컬렉션`${users}`의 `user`를 왼쪽의 `user`에 할당한다.<br/>
 반복의 상태를 알려주는 `userStat`를 사용할 수 있는데, 이는 생략하여 사용할 수 있다.<br/>
 다만 생략하면 지정한 변수명`${fieldNameStat}`으로 자동 지정된다.
-=======
->>>>>>> parent of 0124075 (Thymeleaf Attribute)

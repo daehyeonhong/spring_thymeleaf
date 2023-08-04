@@ -117,6 +117,12 @@ public class BasicController {
         model.addAttribute("users", list);
     }
 
+    @GetMapping(value = "/block")
+    public String block(final Model model) {
+        addUsers(model);
+        return "basic/block";
+    }
+
     @Component(value = "helloBean")
     static class HelloBean {
         public String hello(final String data) {

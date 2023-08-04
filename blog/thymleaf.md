@@ -226,3 +226,16 @@ SSR이란?
 `<!--/*`와 `*/-->` 사이에 작성된 내용은 `Thymeleaf`가 파싱하지 않는다.<br/>
 `<!--/*/ /*/-->`는 `Thymeleaf`의 프로세서 주석이다.<br/>
 `<!--/*/`와 `/*/-->` 사이에 작성된 내용은 `HTML` 파일에서는 주석처리되지만, `Thymeleaf`가 파싱하여 실행한다.
+
+### 4.7 `th:block`
+
+`th:block`은 `HTML`의 `div` 태그와 같은 역할을 한다.<br/>
+기본적인 `th:each`의 기능으로 해결할 수 없는 경우, `th:block`을 사용하여 해결할 수 있다.
+
+```html
+
+<th:block th:each="user : ${users}">
+    <span th:text="${user.username}">username</span>
+    <span th:text="${user.age}">0</span>
+</th:block>
+```

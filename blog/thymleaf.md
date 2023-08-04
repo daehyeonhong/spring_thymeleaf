@@ -254,3 +254,20 @@ SSR이란?
     [/]
 </script>
 ```
+
+### 4.9 `th:template`
+
+#### 4.9.1 `th:fragment`
+
+`th:fragment`는 `Thymeleaf`의 `Fragment`를 정의할 때 사용한다.<br/>
+문법은 `~{...}`이며, `HTML`의 `div` 태그와 같은 역할을 한다.<br/>
+`~{...}` 태그는 생략 가능하다고 했지만, 최신 버전에서는 생략이 불가능하다.<br/>
+`(Deprecated unwrapped fragment expression)`<br/>
+`th:fragment`는 `th:insert`와 `th:replace`에서 사용된다.<br/>
+`th:insert`는 `th:fragment`를 `HTML`에 삽입하고, `th:replace`는 `HTML`의 태그를 `th:fragment`로 대체한다.<br/>
+파라미터를 넘겨 동적으로 `th:fragment`를 생성할 수 있다.
+
+#### 4.9.2 `th:layout`
+
+앞서 설명한 파라미터를 넘겨 동적으로 `th:fragment`를 생성하는 기능은 단순한 데이터 뿐만 아니라 리소스까지 넘겨줄 수 있다.<br/>
+`title`이나, `link` 태그 등을 넘겨주어 동적으로 `HTML`을 생성할 수 있다.<br/>

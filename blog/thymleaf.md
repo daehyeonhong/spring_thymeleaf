@@ -239,3 +239,18 @@ SSR이란?
     <span th:text="${user.age}">0</span>
 </th:block>
 ```
+
+### 4.8 `th:inline`
+
+`th:inline="javascript"`는 `Thymeleaf`의 `Expression`을 `JavaScript`로 사용할 수 있게 해준다.<br/>
+기본적으로 변수의 타입에 맞게 `JavaScript`의 타입이 지정된다.<br/>
+뿐만아니라 `Thymeleaf`의 `Natural Template` 기능도 사용할 수 있다.<br/>
+반복문을 사용해야하는 경우, 아래와 같은 코드를 사용해야 한다.
+
+```thymeleafexpressions
+<script th:inline="javascript">
+    [# th:each="user, stat : ${users}"]
+    const user[[${stat.count]] = [[${user}]];
+    [/]
+</script>
+```

@@ -123,6 +123,13 @@ public class BasicController {
         return "basic/block";
     }
 
+    @GetMapping(value = "/javascript")
+    public String javascript(final Model model) {
+        model.addAttribute("user", new User("userA", 10));
+        addUsers(model);
+        return "basic/javascript";
+    }
+
     @Component(value = "helloBean")
     static class HelloBean {
         public String hello(final String data) {

@@ -102,6 +102,12 @@ public class BasicController {
         return "basic/condition";
     }
 
+    @GetMapping(value = "/comments")
+    public String comments(final Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
+    }
+
     private static void addUsers(final Model model) {
         final List<User> list = Arrays.asList(
                 new User("userA", 10),

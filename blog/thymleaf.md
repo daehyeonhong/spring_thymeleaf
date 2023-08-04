@@ -149,6 +149,7 @@ SSR이란?
 |   `엘비스 연산자`    |                `?:`                |
 | `No-Operation` |                `_`                 |
 |    `연결 연산자`    |                `+`                 |
+<<<<<<< HEAD
 
 ## 4. `Thymeleaf`의 `Attribute`
 
@@ -172,3 +173,33 @@ SSR이란?
 <!-- HTML -->
 <input type="checkbox" th:checked="${user.enabled}"/>
 ```
+
+### 4.4 `th:each`
+
+`th:each`는 `Collection`을 순회할 때 사용한다.
+반복하고 있는 상태를 알려주는 기능도 제공한다.
+
+```html
+
+<tr th:each="user, userStat : ${users}">
+    <td th:text="${userStat.count}">username</td>
+    <td th:text="${user.username}">username</td>
+    <td th:text="${user.age}">0</td>
+    <td>
+        index = <span th:text="${userStat.index}"></span>
+        count = <span th:text="${userStat.count}"></span>
+        size = <span th:text="${userStat.size}"></span>
+        even? = <span th:text="${userStat.even}"></span>
+        odd? = <span th:text="${userStat.odd}"></span>
+        first? = <span th:text="${userStat.first}"></span>
+        last? = <span th:text="${userStat.last}"></span>
+        current = <span th:text="${userStat.current}"></span>
+    </td>
+</tr>
+```
+
+반복시 오른쪽 컬렉션`${users}`의 `user`를 왼쪽의 `user`에 할당한다.<br/>
+반복의 상태를 알려주는 `userStat`를 사용할 수 있는데, 이는 생략하여 사용할 수 있다.<br/>
+다만 생략하면 지정한 변수명`${fieldNameStat}`으로 자동 지정된다.
+=======
+>>>>>>> parent of 0124075 (Thymeleaf Attribute)

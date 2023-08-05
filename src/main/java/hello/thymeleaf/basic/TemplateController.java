@@ -15,4 +15,9 @@ public class TemplateController {
     public String layout() {
         return "template/layout/layoutMain";
     }
+
+    @RequestMapping(value = "/layoutExtend")
+    public String layoutExtend() {
+        return "template/layoutExtend/layoutExtendMain";
+    }
 }

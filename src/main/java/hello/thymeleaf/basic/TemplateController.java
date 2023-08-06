@@ -7,21 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/template")
 public class TemplateController {
-
-    @GetMapping(value = "fragment")
+    @RequestMapping(value = "/fragment")
     public String template() {
-        return "/template/fragment/fragmentMain";
+        return "template/fragment/fragmentMain";
     }
 
-
-    @GetMapping(value = "layout")
+    @RequestMapping(value = "/layout")
     public String layout() {
         return "template/layout/layoutMain";
     }
 
-    @GetMapping(value = "/layoutExtend")
+    @RequestMapping(value = "/layoutExtend")
     public String layoutExtend() {
-        return "/template/layoutExtend/layoutExtendMain";
+        return "template/layoutExtend/layoutExtendMain";
     }
-
 }

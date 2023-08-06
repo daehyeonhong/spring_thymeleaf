@@ -1,10 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Operation</title>
+    <title>Title</title>
 </head>
 <body>
 <ul>
@@ -20,8 +18,8 @@
             <li>1 gt 10 = <span th:text="1 gt 10"></span></li>
             <li>1 >= 10 = <span th:text="1 >= 10"></span></li>
             <li>1 ge 10 = <span th:text="1 ge 10"></span></li>
-            <li>1 == 10 = <span th:text="1 == 10"></span></li>
-            <li>1 != 10 = <span th:text="1 != 10"></span></li>
+            <li>1 == 1 = <span th:text="1 == 10"></span></li>
+            <li>1 != 1 = <span th:text="1 != 10"></span></li>
         </ul>
     </li>
     <li>조건식
@@ -31,14 +29,14 @@
     </li>
     <li>Elvis 연산자
         <ul>
-            <li>${data}?: '데이터가 없습니다.' = <span th:text="${data}?:'데이터가 없습니다.'"></span></li>
-            <li>${nullData}?: '데이터가 없습니다.' = <span th:text="${nullData}?:'데이터가 없습니다.'"></span></li>
+            <li>${data}?: '데이터가 없습니다.' = <span th:text="${data}?: '데이터가 없습니다.'"></span></li>
+            <li>${nullData}?: '데이터가 없습니다.' = <span th:text="${nullData}?: '데이터가 없습니다.'"></span></li>
         </ul>
     </li>
     <li>No-Operation
         <ul>
-            <li>${data}?: _ = <span th:text="${data}?:_">데이터가 없습니다.</span></li>
-            <li>${nullData}?: _ = <span th:text="${nullData}?:_">데이터가 없습니다.</span></li>
+            <li>${data}?: _ = <span th:text="${data}?: _">데이터가 없습니다.</span></li>
+            <li>${nullData}?: _ = <span th:text="${nullData}?: _">데이터가 없습니다.</span></li>
         </ul>
     </li>
 </ul>

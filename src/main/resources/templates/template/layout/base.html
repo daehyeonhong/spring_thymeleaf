@@ -1,14 +1,12 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:fragment="common_header(title,links)">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title th:replace="${title}">레이아웃 타이틀</title>
 
+    <!-- 공통 -->
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/awesomeapp.css}">
     <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
     <script type="text/javascript" th:src="@{/sh/scripts/codebase.js}"></script>
-
-    <th:block th:replace="${links}"/>
+    <!-- 추가 -->
+    <th:block th:replace="${links}" />
 </head>

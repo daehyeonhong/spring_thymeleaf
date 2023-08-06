@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-
 <th:block th:each="user : ${users}">
     <div>
         사용자 이름1 <span th:text="${user.username}"></span>
@@ -15,6 +14,5 @@
         요약 <span th:text="${user.username} + ' / ' + ${user.age}"></span>
     </div>
 </th:block>
-
 </body>
 </html>

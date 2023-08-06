@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +22,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 @RequestMapping(value = "/basic")
 public class BasicController {
     private static final Logger logger = getLogger(BasicController.class);
+
 
     @GetMapping(value = "/text-basic")
     public String textBasic(final Model model) {
@@ -50,7 +52,7 @@ public class BasicController {
         model.addAttribute("users", list);
         model.addAttribute("userMap", map);
 
-        return "basic/variable";
+        return "/basic/variable";
     }
 
     @GetMapping(value = "/basic-objects")
